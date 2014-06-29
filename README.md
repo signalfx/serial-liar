@@ -1,5 +1,5 @@
-# Fake serial number generators
-A javascript library to generate infinite streams of fake serial data.
+# Fake number generators
+A javascript library to generate infinite streams of numbers.
 
 ## Install
 Three options:
