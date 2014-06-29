@@ -95,7 +95,7 @@ function subtractSequences (sequences){
 		var	index = 1,
 			result = sequences[0]();
 
-		while(index++ < length) result -= sequences[index]();
+		while(index < length) result -= sequences[index++]();
 		
 		return result;
 	};
@@ -110,7 +110,7 @@ function multiplySequences (sequences){
 		var	index = 1,
 			result = sequences[0]();
 
-		while(index++ < length) result *= sequences[index]();
+		while(index < length) result *= sequences[index++]();
 		
 		return result;
 	};
@@ -125,7 +125,7 @@ function divideSequences (sequences){
 		var	index = 1,
 			result = sequences[0]();
 
-		while(index++ < length) result /= sequences[index]();
+		while(index < length) result /= sequences[index++]();
 		
 		return result;
 	};
@@ -140,7 +140,7 @@ function sequenceArray (sequences){
 		var index = 0,
 			result = new Array(length);
 
-		while(index++ < length) result[index] = sequences[index]();
+		while(index < length) result[index++] = sequences[index]();
 
 		return result;
 	};
@@ -158,7 +158,7 @@ function arrayFromSequence (sequence, length){
 	var array = new Array(length),
 		index = 0;
 	
-	while(index++ < length) array[index] = sequence();
+	while(index < length) array[index++] = sequence();
 
 	return array;
 }
