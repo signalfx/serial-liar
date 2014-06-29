@@ -1,14 +1,18 @@
 {
-  "name": "client-side-seed",
-  "private": true,
+  "name": "serial-liar",
   "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "main": [
-    "dist/client-side-seed.css",
-    "dist/client-side-seed.js"
+  "description": "Fake serial number generators",
+  "keywords": [
+    "generator",
+    "fake",
+    "data",
+    "serial",
+    "sequence"
   ],
-  "homepage": "https://github.com/oztu/client-side-seed",
+  "main": [
+    "dist/serial-liar.js"
+  ],
+  "homepage": "https://github.com/oztu/serial-liar",
   "authors": [
     "Ozan Turgut <ozanturgut@gmail.com>"
   ],
@@ -31,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:oztu/client-side-seed.git"
+    "url": "git@github.com:oztu/serial-liar.git"
   },
   "dependencies": {}
 }

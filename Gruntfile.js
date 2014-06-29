@@ -32,22 +32,6 @@ module.exports = function(grunt){
 			devJS: {
 				files: ['src/js/**'],
 				tasks: ['browserify:dev', 'copy', 'jshint:dev']
-			},
-			devCSS: {
-				files: ['src/css/**'],
-				tasks: ['compass:dist', 'copy']
-			}
-		},
-
-		compass: {
-			dist: {
-				options: { sassDir: 'src/css', cssDir: 'dist' }
-			}
-		},
-
-		cssmin: {
-			dist: {
-				files: { 'dist/<%= pkg.name %>.css' : ['dist/<%= pkg.name %>.css'] }
 			}
 		},
 
@@ -91,12 +75,10 @@ module.exports = function(grunt){
 		}
 	});
 	
-	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-connect');
@@ -106,7 +88,6 @@ module.exports = function(grunt){
 		'clean',
 		'jasmine',
 		'browserify:dev',
-		'compass',
 		'jshint:dev',
 		'copy',
 		'connect',
@@ -118,9 +99,8 @@ module.exports = function(grunt){
 		'clean',
 		'browserify:dist',
 		'uglify',
-		'jasmine',
-		'compass',
-		'cssmin'
+		'copy',
+		'jasmine'
 	]);
 
 	grunt.registerTask('default', 'dist');

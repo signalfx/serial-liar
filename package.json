@@ -1,10 +1,9 @@
 {
-  "name": "seed",
-  "version": "0.0.0",
-  "private": true,
-  "description": "",
+  "name": "serial-liar",
+  "version": "0.0.1",
+  "description": "Fake serial number generators",
   "keywords": [],
-  "main": "index.js",
+  "main": "src/js/module.js",
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-contrib-compass": "~0.7.2",
@@ -30,15 +29,15 @@
   "licenses": [
     {
       "type": "Apache License 2.0",
-      "url": "https://github.com/oztu/client-side-seed/blob/master/LICENSE-APACHE2"
+      "url": "https://github.com/oztu/serial-liar/blob/master/LICENSE-APACHE2"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/oztu/client-side-seed.git"
+    "url": "git://github.com/oztu/serial-liar.git"
   },
   "bugs": {
-    "url": "https://github.com/oztu/client-side-seed/issues"
+    "url": "https://github.com/oztu/serial-liar/issues"
   },
-  "homepage": "https://github.com/oztu/client-side-seed"
+  "homepage": "https://github.com/oztu/serial-liar"
 }
