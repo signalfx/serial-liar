@@ -75,53 +75,74 @@ exports.randomWalkSequence = randomWalkSequence;
 // Multi-sequence operations
 function addSequences (sequences){
 	return function (){
-		return sequences.reduce(function(prev, curr, index){
-			if (index === 1) return prev() + curr();
+		var index = sequences.length;
+		if(!index) return;
 
-			return prev + curr();
-		});
+		var result = 0;
+
+		while(index--) result += sequences[index]();
+		
+		return result;
 	};
 }
 exports.addSequences = addSequences;
 
 function subtractSequences (sequences){
 	return function (){
-		return sequences.reduce(function(prev, curr, index){
-			if (index === 1) return prev() - curr();
+		var length = sequences.length;
+		if(!length) return;
 
-			return prev - curr();
-		});
+		var	index = 1,
+			result = sequences[0]();
+
+		while(index++ < length) result -= sequences[index]();
+		
+		return result;
 	};
 }
 exports.subtractSequences = subtractSequences;
 
 function multiplySequences (sequences){
 	return function (){
-		return sequences.reduce(function(prev, curr, index){
-			if (index === 1) return prev() * curr();
-			
-			return prev * curr();
-		});
+		var length = sequences.length;
+		if(!length) return;
+
+		var	index = 1,
+			result = sequences[0]();
+
+		while(index++ < length) result *= sequences[index]();
+		
+		return result;
 	};
 }
 exports.multiplySequences = multiplySequences;
 
 function divideSequences (sequences){
 	return function (){
-		return sequences.reduce(function(prev, curr, index){
-			if (index === 1) return prev() / curr();
-			
-			return prev / curr();
-		});
+		var length = sequences.length;
+		if(!length) return;
+
+		var	index = 1,
+			result = sequences[0]();
+
+		while(index++ < length) result /= sequences[index]();
+		
+		return result;
 	};
 }
 exports.divideSequences = divideSequences;
 
 function sequenceArray (sequences){
 	return function (){
-		return sequences.map(function(sequence){
-			return sequence();
-		});
+		var length = sequences.length;
+		if(!length) return;
+		
+		var index = 0,
+			result = new Array(length);
+
+		while(index++ < length) result[index] = sequences[index]();
+
+		return result;
 	};
 }
 exports.sequenceArray = sequenceArray;
@@ -134,11 +155,10 @@ function compose (outer, inner){
 exports.compose = compose;
 
 function arrayFromSequence (sequence, length){
-	var array = new Array(length);
+	var array = new Array(length),
+		index = 0;
 	
-	for (var index = 0; index < length; index++){
-		array[index] = sequence();
-	}
+	while(index++ < length) array[index] = sequence();
 
 	return array;
 }

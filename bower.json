@@ -1,6 +1,6 @@
 {
   "name": "serial-liar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fake serial number generators",
   "keywords": [
     "generator",
