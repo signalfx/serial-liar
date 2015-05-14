@@ -1,12 +1,6 @@
 # Fake number generators
 A javascript library to generate infinite streams of numbers.
 
-## Install
-Three options:
-* A prebuilt and minified file at `dist/serial-liar.js`
-* `bower install serial-liar` 
-* `npm install serial-liar`
-
 ## Example
 ```javascript
 var serialLiar = require('serial-liar'); // not nescessary in browsers
@@ -19,6 +13,12 @@ var data = serialLiar.arithmetic(Math.PI * 2 / 25)
 var oneNumberFromSerial = data(); // or data.next();
 var arrayOfNumbersFromSerial = data(100); // or data.next(100);
 ```
+
+## Install
+Three options:
+* A prebuilt and minified file at `dist/serial-liar.js`
+* `bower install serial-liar` 
+* `npm install serial-liar`
 
 ## API
 ```javascript
